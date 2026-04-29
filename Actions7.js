@@ -1,0 +1,30 @@
+let pagina = document.getElementById("pagina");
+let anteriorBTN = document.getElementById("anteriorBTN");
+let siguienteBTN = document.getElementById("siguienteBTN");
+
+let paginas = [
+        "./GabyComic/Gaby1.jpg",
+        "./GabyComic/Gaby2.jpg",
+        "./GabyComic/Gaby3.jpg",
+        "./GabyComic/Gaby4.jpg",
+        "./GabyComic/Gaby5.jpg",
+        "./GabyComic/Gaby6.jpg",
+];
+
+let i = 0;
+
+function actualizar(){
+    pagina.src = paginas[i];
+    anteriorBTN.disabled = (i === 0);
+    siguienteBTN.disabled = (i === paginas.length - 1);
+}
+function siguientePagina(){
+    i++;
+    actualizar();
+}
+function anteriorPagina(){
+    i--;
+    actualizar();
+}
+
+actualizar()
